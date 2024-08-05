@@ -32,3 +32,5 @@ current_measure = items[key][1]
 
 #sends message of process completion
 rep_socket.send_string("conversion complete")
+
+#service exits after completion 
