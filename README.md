@@ -4,7 +4,7 @@ recipe_context = zmq.Context() #set up environment
 recipe_req = recipe_context.socket(zmq.REQ) #create socket for making requests
 recipe_req.connect('tcp://localhost:5555')  #connect to the port where the service is listening for your request
 
-#turn values take from function parameter turn them into values to be passed
+#turn values taken from function parameter turn them into values to be passed
 val1 = ingredient
 val2 = convert_to
 
@@ -19,7 +19,7 @@ message = rep_socket.recv_string()
 data = json.loads(message)
 vals = list(data.values())
 
-#values are stroed to variables for function use
+#values are stored to variables for function use
 key = vals[0]
 conversion = vals[1]
 
