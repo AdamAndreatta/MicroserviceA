@@ -34,3 +34,4 @@ current_measure = items[key][1]
 rep_socket.send_string("conversion complete")
 
 #service exits after completion 
+![UML](https://github.com/user-attachments/assets/57b6abb7-b2a1-4abe-913a-288e07873b08)
