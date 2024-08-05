@@ -13,16 +13,19 @@ val2 = convert_to
 dict = {"ingredient": val1, "Convert to": val2}
 message = json.dumps(dict)
 
-#Message is recived by the service and the string will be converted back into a python object to obtain the values to change
+#Message is recived by the service and the string will be converted back into a python object to obtain the values needing to be changed
+
 message = rep_socket.recv_string()
 data = json.loads(message)
 vals = list(data.values())
 
 #Values are stored to variables for function use
+
 key = vals[0]
 conversion = vals[1]
 
 #Load json dictionary so that converted values can be stored to the json and then passed back to client program.
+
 f = open("inventory.json")
 items = json.load(f)
 f.close()
@@ -30,9 +33,11 @@ amount = items[key][0]
 current_measure = items[key][1]
 
 #Sends message of process completion
+
 rep_socket.send_string("conversion complete")
 
 #Service exits after completion 
+
 recipe_req.close()
 recipe_context.term()
 
